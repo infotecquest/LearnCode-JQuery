@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+    <title>jQuery Tutorial</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="../css/bootstrap-3.3.7/dist/css/bootstrap.css">
+
+    <style type="text/css">
+    .jumbotron {
+        text-align: center;
+    }
+    button {
+        width: 100px;
+        height: 40px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Let's Have Fun!</h1>
+            <button id="btn1" class="panel-button" data-panelid="panel1" >#btn1</button>
+            <button id="btn2" class="panel-button" data-panelid="panel2">#btn2</button>
+            <button id="btn3" class="panel-button" data-panelid="panel3">#btn3</button>
+            <button id="btn4" class="panel-button" data-panelid="panel4">#btn4</button>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-3">
+                <div id="panel1" class="panel panel-primary">
+                    <div class="panel-heading">
+                        #panel1
+                    </div>
+                    <div class="panel-body">
+                        content
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div id="panel2" class="panel panel-primary">
+                    <div class="panel-heading">
+                        #panel2
+                    </div>
+                    <div class="panel-body">
+                        content
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div id="panel3" class="panel panel-primary">
+                    <div class="panel-heading">
+                        #panel3
+                    </div>
+                    <div class="panel-body">
+                        content
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-3">
+                <div id="panel4" class="panel panel-primary">
+                    <div class="panel-heading">
+                        #panel4
+                    </div>
+                    <div class="panel-body">
+                        content
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="../js/jquery-3.1.1.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="../css/bootstrap-3.3.7/dist/js/bootstrap.js"></script>
+
+
+<script type="text/javascript">
+    $(function(){
+        console.log("loaded");
+
+
+       $(".panel-button").on("click", function(){
+            var newContent = "newContent";
+
+            var panelId = $(this).attr("data-panelid");
+            //$("#"+panelId).fadeToggle(200);
+            $("#"+panelId + " .panel-body").html(newContent);
+       });
+
+        /*$("#btn2").on("click", function(){
+            $("#panel2").fadeToggle(200);
+       });*/
+
+
+    });
+</script>
+</body>
+</html>
